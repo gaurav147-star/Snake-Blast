@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.body{
+    background: url(../img/BG.png);
+    min-height: 100vh;
+   
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#scoreBox{
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+#hiscoreBox{
+    position: absolute;
+    top: 59px;
+    right: 100px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+#board{
+    background: linear-gradient(grey ,black );
+    width: 90vmin;
+    height: 92vmin;
+    border: 3px solid black;
+    border: 2px;
+    display: grid;
+    grid-template-columns: repeat(18,1fr);
+    grid-template-rows: repeat(18,1fr);
+}
+.head{
+    background: linear-gradient(pink,aqua);
+    border: 2px solid white;
+    border-radius: 12px;
+    transform: scale(1.05);
+}
+.snake{
+    background: linear-gradient(purple, orange);
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+.food{
+    background: linear-gradient(red , purple);
+    border: .25vmin solid white;
+    border-radius: 20px;
+}
