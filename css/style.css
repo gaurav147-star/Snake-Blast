@@ -43,7 +43,7 @@
 .head{
     background: linear-gradient(pink,aqua);
     border: 2px solid white;
-    border-radius: 12px;
+    border-radius: 13px;
     transform: scale(1.05);
 }
 .snake{
