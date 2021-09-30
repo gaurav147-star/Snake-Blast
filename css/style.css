@@ -5,9 +5,9 @@
 }
 
 .body{
-    background: url(../img/BG.png);
+    background: url(../img/bg.png);
     min-height: 100vh;
-   
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -34,8 +34,8 @@
     background: linear-gradient(grey ,black );
     width: 90vmin;
     height: 92vmin;
-    border: 3px solid black;
-    border: 2px;
+    border: 3px solid rgb(243, 243, 243);
+    border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(18,1fr);
     grid-template-rows: repeat(18,1fr);
