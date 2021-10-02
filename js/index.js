@@ -10,6 +10,18 @@ let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
 food = { x: 5, y: 7 };
 
+
+let hiscore = localStorage.getItem("hiscore");
+if (hiscore === null) {
+  hiscoreval = 0;
+  localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+} else {
+  hiscoreval = JSON.parse(hiscore);
+  hiscoreBox.innerHTML = "High Score:" + hiscore;
+}
+
+function playGame(){
+
 //Game Function
 //ctime=current time
 function main(ctime) {
@@ -40,6 +52,7 @@ function isCollide(snake) {
   }
 }
 
+
 function gameEngine() {
   //Part 1: Updating the snake array & Food
   // musicSound.play();
@@ -48,7 +61,8 @@ function gameEngine() {
     musicSound.pause();
     inputDir = { x: 0, y: 0 };
     alert("Game Over. Press any key to play again");
-    snakeArr = [{ x: 13, y: 15 }];
+    window.location.reload();
+    playGame();
     // musicSound.play();
     score = 0;
   }
@@ -113,38 +127,7 @@ if (hiscore === null) {
   hiscoreBox.innerHTML = "High Score:" + hiscore;
 }
 window.requestAnimationFrame(main);
-window.addEventListener("keydown", (e) => {
-  inputDir = { x: 0, y: 1 }; //Start the game
-  moveSound.play();
-  switch (e.key) {
-    case "ArrowUp":
-      console.log("ArrowUp");
-      inputDir.x = 0;
-      inputDir.y = -1;
-      break;
 
-    case "ArrowDown":
-      console.log("ArrowDown");
-      inputDir.x = 0;
-      inputDir.y = 1;
-      break;
-
-    case "ArrowLeft":
-      console.log("ArrowLeft");
-      inputDir.x = -1;
-      inputDir.y = 0;
-      break;
-
-    case "ArrowRight":
-      console.log("ArrowRight");
-      inputDir.x = 1;
-      inputDir.y = 0;
-      break;
-
-    default:
-      break;
-  }
-});
 var x = document.getElementById("musicSound");
 
 function enableMute() {
@@ -157,4 +140,39 @@ function disableMute() {
 
 function checkMute() {
   alert(x.muted);
+}
+
+  window.addEventListener("keydown", (e) => {
+    inputDir = { x: 0, y: 1 }; //Start the game
+    moveSound.play();
+    switch (e.key) {
+      case "ArrowUp":
+        console.log("ArrowUp");
+        inputDir.x = 0;
+        inputDir.y = -1;
+        break;
+  
+      case "ArrowDown":
+        console.log("ArrowDown");
+        inputDir.x = 0;
+        inputDir.y = 1;
+        break;
+  
+      case "ArrowLeft":
+        console.log("ArrowLeft");
+        inputDir.x = -1;
+        inputDir.y = 0;
+        break;
+  
+      case "ArrowRight":
+        console.log("ArrowRight");
+        inputDir.x = 1;
+        inputDir.y = 0;
+        break;
+  
+      default:
+        break;
+    }
+  });
+  snakeArr = [{ x: 13, y: 15 }];
 }
