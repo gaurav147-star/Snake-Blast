@@ -10,10 +10,10 @@ let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
 food = { x: 5, y: 7 };
 let max = 0;
-let showscore;
+
 
 function playGame() {
- 
+
   //Game Function
   //ctime=current time
   function main(ctime) {
@@ -57,13 +57,12 @@ function playGame() {
       var dat = {
         sc: score
       }
-      showscore = score
       ref.push(dat);
       // console.log(score)
       // swal("Game Over", "Congrats!You Scored ", "success");
       inputDir = { x: 0, y: 0 };
 
-      // alert("Game Over. Press any key to play again");
+      alert("Game Over. Press any key to play again " + score);
       // window.location.reload();
       playGame();
       // musicSound.play();
