@@ -10,9 +10,21 @@ let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
 food = { x: 5, y: 7 };
 let max = 0;
-
+let showscore;
 
 function playGame() {
+  console.log(showscore)
+  if (isCollide(snakeArr)) {
+
+    swal({
+      title: "Game Over",
+      text: "Congrats!Your score have recorded",
+      icon: "success",
+    });
+  } else {
+    swal("Start Snake game", "You can play using up and down button")
+  }
+
 
   //Game Function
   //ctime=current time
@@ -50,19 +62,21 @@ function playGame() {
   function gameEngine() {
     //Part 1: Updating the snake array & Food
     // musicSound.play();
-    
+
     if (isCollide(snakeArr)) {
       gameOverSound.play();
       musicSound.pause();
-
       var dat = {
         sc: score
       }
+      showscore = score
       ref.push(dat);
       // console.log(score)
+      // swal("Game Over", "Congrats!You Scored ", "success");
       inputDir = { x: 0, y: 0 };
-      alert("Game Over. Press any key to play again");
-      window.location.reload();
+
+      // alert("Game Over. Press any key to play again");
+      // window.location.reload();
       playGame();
       // musicSound.play();
       score = 0;
@@ -194,6 +208,12 @@ function playGame() {
         max = ff;
       }
       // console.log(ff)
+      // var li = document.createElement("li", ff)
+      // li.parentElement('scorelist')
+
+
+      // // console.log(ff)
+      // console.log(li)
     }
     // console.log(max)
     hiscoreBox.innerHTML = "High Score:" + max;
