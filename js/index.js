@@ -13,19 +13,7 @@ let max = 0;
 let showscore;
 
 function playGame() {
-  console.log(showscore)
-  if (isCollide(snakeArr)) {
-
-    swal({
-      title: "Game Over",
-      text: "Congrats!Your score have recorded",
-      icon: "success",
-    });
-  } else {
-    swal("Start Snake game", "You can play using up and down button")
-  }
-
-
+ 
   //Game Function
   //ctime=current time
   function main(ctime) {
