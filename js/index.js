@@ -9,7 +9,7 @@ let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
 food = { x: 5, y: 7 };
-let max = 0;
+let highscore = 0;
 
 
 function playGame() {
@@ -54,7 +54,7 @@ function playGame() {
     if (isCollide(snakeArr)) {
       gameOverSound.play();
       musicSound.pause();
-      console.log(highscore)
+      // console.log(highscore)
       if (score > highscore) {
         var person = prompt("Congrats!Please enter your name", "Naruto Uzumaki");
         var dat = {
@@ -63,15 +63,17 @@ function playGame() {
         }
         ref.push(dat);
       }
-      // console.log(score)
+      console.log(score)
       // swal("Game Over", "Congrats!You Scored ", "success");
       inputDir = { x: 0, y: 0 };
-
+      
       alert("Game Over. Press any key to play again " + score);
-      // window.location.reload();
+      
+      console.log(score)
+      window.location.reload();
       playGame();
-      // musicSound.play();
       score = 0;
+      // musicSound.play();
     }
     //If food eaten by the snake , increment the score and regenerate the food
     if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
@@ -201,20 +203,20 @@ function playGame() {
       var lihiscore = document.createElement("li");
       var hiusername = document.createTextNode(username);
       var hiuserscore = document.createTextNode(userscore);
-      console.log(hiusername)
-      console.log(hiuserscore)
+      // console.log(hiusername)
+      // console.log(hiuserscore)
       lihiname.appendChild(hiusername);
       lihiscore.appendChild(hiuserscore);
 
 
       document.getElementById("myUl").appendChild(lihiname);
       document.getElementById("myUl").appendChild(lihiscore);
-      console.log(li)
-      if (userscore > max) {
+      // console.log(userscore)
+      if (userscore > highscore) {
         highscore = userscore;
       }
+      console.log(highscore)
     }
-    // console.log(max)
     hiscoreBox.innerHTML = "High Score:" + highscore;
   }, function (error) {
     console.log("Error: " + error.code);
