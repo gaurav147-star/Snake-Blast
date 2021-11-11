@@ -54,10 +54,15 @@ function playGame() {
     if (isCollide(snakeArr)) {
       gameOverSound.play();
       musicSound.pause();
-      var dat = {
-        sc: score
+      console.log(highscore)
+      if (score > highscore) {
+        var person = prompt("Congrats!Please enter your name", "Naruto Uzumaki");
+        var dat = {
+          sc: score,
+          name: person
+        }
+        ref.push(dat);
       }
-      ref.push(dat);
       // console.log(score)
       // swal("Game Over", "Congrats!You Scored ", "success");
       inputDir = { x: 0, y: 0 };
@@ -189,21 +194,28 @@ function playGame() {
     // console.log(keys);
     for (var i = 0; i < keys.length; i++) {
       var k = keys[i];
-      var ff = scores[k].sc;
 
-      if (ff > max) {
-        max = ff;
+      var username = scores[k].name;
+      var userscore = scores[k].sc;
+      var lihiname = document.createElement("li");
+      var lihiscore = document.createElement("li");
+      var hiusername = document.createTextNode(username);
+      var hiuserscore = document.createTextNode(userscore);
+      console.log(hiusername)
+      console.log(hiuserscore)
+      lihiname.appendChild(hiusername);
+      lihiscore.appendChild(hiuserscore);
+
+
+      document.getElementById("myUl").appendChild(lihiname);
+      document.getElementById("myUl").appendChild(lihiscore);
+      console.log(li)
+      if (userscore > max) {
+        highscore = userscore;
       }
-      // console.log(ff)
-      // var li = document.createElement("li", ff)
-      // li.parentElement('scorelist')
-
-
-      // // console.log(ff)
-      // console.log(li)
     }
     // console.log(max)
-    hiscoreBox.innerHTML = "High Score:" + max;
+    hiscoreBox.innerHTML = "High Score:" + highscore;
   }, function (error) {
     console.log("Error: " + error.code);
   });

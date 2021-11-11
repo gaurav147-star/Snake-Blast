@@ -34,7 +34,7 @@
 }
 
 #board {
-  background:rgba(0, 0, 0, 0.329);
+  background: rgba(0, 0, 0, 0.329);
   width: 90vmin;
   height: 92vmin;
   border: 3px solid rgb(243, 243, 243);
@@ -42,6 +42,7 @@
   display: grid;
   grid-template-columns: repeat(18, 1fr);
   grid-template-rows: repeat(18, 1fr);
+  /* position: absolute; */
 }
 .head {
   background: linear-gradient(pink, aqua);
@@ -73,4 +74,16 @@
   font-family: "Work Sans", sans-serif;
   box-shadow: 0px 2px 2px rgb(102, 98, 98);
   padding: 10px;
+}
+#myUl {
+  /* margin-right: 45px; */
+  /* color: black;
+  font-size: medium; */
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Work Sans", sans-serif;
+  /* transform: translateX(-60%); */
 }
