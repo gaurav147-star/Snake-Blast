@@ -11,6 +11,11 @@
 #### When you start the game you can see high score in right side and left show who created this high score.
 #### If you break highscore then there is option come to enter your name and this highscore and your will show in the game.
 
-<h1></h1>
+---
+
+## Application Screenshots
+
 
 ![image](img/snap.png)
+---
+![image](img/snap1.png)
