@@ -7,9 +7,10 @@
 <h3>How to play?</h3>
 
 #### This is a simple game which can be played on desktop.
-#### You can use left and right arrow keys or mouse to move the snake.
-#### When you start the game you can see high score in right side and left show who created this high score.
-#### If you break highscore then there is option come to enter your name and this highscore and your will show in the game.
+#### You can use left and right arrow keys to move the snake.
+#### When you start the game you can see high score in right side and left side displays the name of the person with highest score.
+#### If you break the highscore then you will be asked to enter you name with the highscore, which will further be displayed in the game.
+
 
 ---
 
