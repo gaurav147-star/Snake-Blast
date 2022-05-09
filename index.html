@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake_Blast</title>
     <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="js/index.js"></script>
-
+    <base href="/">
     <!-- <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,9 +23,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        <script src="alert/dist/sweetalert-dev.js"></script>
-        <link rel="stylesheet" href="alert/dist/sweetalert.css">
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="alert/dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="alert/dist/sweetalert.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -35,33 +35,30 @@
         <a href="#" class="close">&times;</a>
         <strong>Success!</strong> This alert box could indicate a successful or positive action.
     </div>
-    </div> -->
+</div> -->
     <div class="body">
-        <div id="scoreboard">
-            <div id="scoreBox">Score: 0</div>
-            <div id="hiscoreBox">High Score: 0</div>
+        <div class="con">
+            <div id="scoreboard">
+                <div id="scoreBox">Score: 0</div>
+                <div id="hiscoreBox">Highscore: 0</div>
+            </div>
+            <button class="Game" onclick="playGame()">Play Game</button>
+            <table class="table table-dark">
+                <thead>
+                    <th>Sno</th>
+                    <th>Name</th>
+                    <th>Best Score</th>
+                </thead>
+                <tbody id="tbody1">
+
+                </tbody>
+            </table>
         </div>
-        <ul id="myUl">
-            <p>Name and Highscore</p>
-        </ul>
-        <!-- <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                </tr>
-            </tbody>
-        </table> -->
+
+
 
 
         <div id="board"></div>
-        <button class="Game" onclick="playGame()">PLAY GAME</button>
     </div>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src='https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js'></script>

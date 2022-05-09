@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Play&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -11,32 +12,41 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: relative;
 }
-
+.con {
+  width: 30%;
+  height: 100vh;
+  position: relative;
+}
 #scoreBox {
   position: absolute;
-  top: 15%;
-  left: 75%;
-  font-size: 39px;
+  top: 5%;
+  /* left: 75%; */
+  font-size: 29px;
   font-weight: bold;
-  font-family: "Work Sans", sans-serif;
+  ffont-family: "Architects Daughter", cursive;
+  font-family: "Caveat", cursive;
+  font-family: "Play", sans-serif;
 }
 #hiscoreBox {
   position: absolute;
-  top: 20%;
-  left: 75%;
-  font-size: 39px;
+  top: 10%;
+  /* left: 75%; */
+  font-size: 29px;
   font-weight: bold;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Architects Daughter", cursive;
+  font-family: "Caveat", cursive;
+  font-family: "Play", sans-serif;
 }
 
 #board {
   background: rgba(0, 0, 0, 0.329);
   width: 90vmin;
   height: 92vmin;
+  transform: translateX(-120px);
   border: 3px solid rgb(243, 243, 243);
   border-radius: 5px;
   display: grid;
@@ -65,25 +75,33 @@
   text-align: center;
   align-items: center;
   color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 0.603);
+  background-color: rgba(231, 231, 231, 0.656);
   font-size: 35px;
   /* bottom: -14%; */
-  left: 75%;
+  /* left: 75%; */
   /* top: 97%; */
-  border-radius: 8px;
-  font-family: "Work Sans", sans-serif;
+  border-radius: 13px;
+  font-family: "Architects Daughter", cursive;
+  font-family: "Caveat", cursive;
+  font-family: "Play", sans-serif;
   box-shadow: 0px 2px 2px rgb(102, 98, 98);
   padding: 10px;
+  top: 25%;
 }
-#myUl {
-  /* margin-right: 45px; */
-  /* color: black;
-  font-size: medium; */
+
+.table {
+  width: 80% !important;
+  margin-right: 120px;
+  /* left: 0px; */
+  top: 40% !important;
+  margin-top: 20px;
   position: absolute;
-  top: 20%;
-  left: 5%;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Work Sans", sans-serif;
-  /* transform: translateX(-60%); */
+  font-family: "Architects Daughter", cursive;
+  font-family: "Caveat", cursive;
+  font-family: "Play", sans-serif;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
 }

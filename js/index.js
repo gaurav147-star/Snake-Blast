@@ -11,7 +11,6 @@ let snakeArr = [{ x: 13, y: 15 }];
 food = { x: 5, y: 7 };
 let highscore = 0;
 
-
 function playGame() {
 
   //Game Function
@@ -66,9 +65,9 @@ function playGame() {
       console.log(score)
       // swal("Game Over", "Congrats!You Scored ", "success");
       inputDir = { x: 0, y: 0 };
-      
+
       alert("Game Over. Press any key to play again " + score);
-      
+
       console.log(score)
       window.location.reload();
       playGame();
@@ -191,32 +190,51 @@ function playGame() {
   const db = firebase.database()
   var ref = db.ref('scores');
   ref.on("value", function (snapshot) {
-    var scores = snapshot.val()
-    var keys = Object.keys(scores);
-    // console.log(keys);
-    for (var i = 0; i < keys.length; i++) {
-      var k = keys[i];
 
-      var username = scores[k].name;
-      var userscore = scores[k].sc;
-      var lihiname = document.createElement("li");
-      var lihiscore = document.createElement("li");
-      var hiusername = document.createTextNode(username);
-      var hiuserscore = document.createTextNode(userscore);
+    //1st method to retrive
+    // var data = snapshot.val();
+    // for(let i in data){
+    //   console.log(data[i].name);
+    // }
+
+    //2nd Method to retrive data
+    snapshot.forEach(function (e) {
+
+      var f_name = e.val().name;
+      var f_sc = e.val().sc;
+      AddItemsToTable(f_name, f_sc);
+      // console.log(f_name);
+      // console.log(f_sc);
+      if (f_sc>highscore) {
+        highscore = f_sc;
+      }
+
+
+    })
+
+    // for (var i = 0; i < keys.length; i++) {
+      // var k = keys[i];
+      // console.log(keys);
+      // var username = scores[k].name;
+      // var userscore = scores[k].sc;
+      // var lihiname = document.createElement("li");
+      // var lihiscore = document.createElement("li");
+      // var hiusername = document.createTextNode(username);
+      // var hiuserscore = document.createTextNode(userscore);
       // console.log(hiusername)
       // console.log(hiuserscore)
-      lihiname.appendChild(hiusername);
-      lihiscore.appendChild(hiuserscore);
+      // lihiname.appendChild(hiusername);
+      // lihiscore.appendChild(hiuserscore);
 
 
-      document.getElementById("myUl").appendChild(lihiname);
-      document.getElementById("myUl").appendChild(lihiscore);
+      // document.getElementById("myUl").appendChild(lihiname);
+      // document.getElementById("myUl").appendChild(lihiscore);
       // console.log(userscore)
-      if (userscore > highscore) {
-        highscore = userscore;
-      }
-      console.log(highscore)
-    }
+      // if (userscore > highscore) {
+      //   highscore = userscore;
+      // }
+      // console.log(highscore)
+    // }
     hiscoreBox.innerHTML = "High Score:" + highscore;
   }, function (error) {
     console.log("Error: " + error.code);
@@ -225,4 +243,20 @@ function playGame() {
 
 
 
+}
+var stdNo = 0;
+
+function AddItemsToTable(f_name, f_sc) {
+  var tbody = document.getElementById('tbody1');
+  var trow = document.createElement('tr');
+  var td1 = document.createElement('td');
+  var td2 = document.createElement('td');
+  var td3 = document.createElement('td');
+  td1.innerHTML = ++stdNo;
+  td2.innerHTML = f_name;
+  td3.innerHTML = f_sc;
+  trow.appendChild(td1);
+  trow.appendChild(td2);
+  trow.appendChild(td3);
+  tbody.appendChild(trow);
 }
