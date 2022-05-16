@@ -16,7 +16,8 @@
 
 ## Application Screenshots
 
+![image](https://user-images.githubusercontent.com/78996081/168678177-178ddd13-9bf2-4382-806c-1ac3ab0bcdfa.png)
 
-![image](img/snap.png)
+<!-- ![image](img/snap.png) -->
 ---
 ![image](img/snap1.png)
