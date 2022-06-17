@@ -29,6 +29,7 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
     <!-- <div class="container">
     <h2>Close Alerts Via JavaScript</h2>
     <div class="alert alert-success alert-dismissible" id="myAlert">
@@ -68,6 +69,13 @@
         // Import the functions you need from the SDKs you need
 
 
+    </script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none"
+        })
     </script>
 </body>
 
