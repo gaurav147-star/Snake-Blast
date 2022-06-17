@@ -73,9 +73,15 @@
 
     <script>
         var loader = document.getElementById("preloader");
-        window.addEventListener("load", function () {
+        // window.addEventListener("load", function () {
+        //     loader.style.display = "none"
+        // })
+        const myTimeout = setTimeout(myGreeting, 2000);
+
+        function myGreeting() {
             loader.style.display = "none"
-        })
+
+        }
     </script>
 </body>
 
