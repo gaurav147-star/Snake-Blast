@@ -5,6 +5,8 @@ const gameOverSound = new Audio("music/gameover.mp3");
 const moveSound = new Audio("music/move.mp3");
 const musicSound = new Audio("music/music.mp3");
 let speed = 10;
+let increasescoreespeed = 10;
+
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [{ x: 13, y: 15 }];
@@ -62,13 +64,13 @@ function playGame() {
         }
         ref.push(dat);
       }
-      console.log(score)
+      // console.log(score)
       // swal("Game Over", "Congrats!You Scored ", "success");
       inputDir = { x: 0, y: 0 };
 
       alert("Game Over. Press any key to play again " + score);
 
-      console.log(score)
+      // console.log(score)
       window.location.reload();
       playGame();
       score = 0;
@@ -78,6 +80,12 @@ function playGame() {
     if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
       foodSound.play();
       score += 1;
+      // console.log(score)
+      if (score > increasescoreespeed) {
+        speed += 2;
+        increasescoreespeed += 10;
+
+      }
 
 
       scoreBox.innerHTML = "Score: " + score;
@@ -93,6 +101,7 @@ function playGame() {
         y: Math.round(a + (b - a) * Math.random()),
       };
     }
+
     // Moving the snake
     for (let i = snakeArr.length - 2; i >= 0; i--) {
       snakeArr[i + 1] = { ...snakeArr[i] };
@@ -205,7 +214,7 @@ function playGame() {
       AddItemsToTable(f_name, f_sc);
       // console.log(f_name);
       // console.log(f_sc);
-      if (f_sc>highscore) {
+      if (f_sc > highscore) {
         highscore = f_sc;
       }
 
@@ -213,27 +222,27 @@ function playGame() {
     })
 
     // for (var i = 0; i < keys.length; i++) {
-      // var k = keys[i];
-      // console.log(keys);
-      // var username = scores[k].name;
-      // var userscore = scores[k].sc;
-      // var lihiname = document.createElement("li");
-      // var lihiscore = document.createElement("li");
-      // var hiusername = document.createTextNode(username);
-      // var hiuserscore = document.createTextNode(userscore);
-      // console.log(hiusername)
-      // console.log(hiuserscore)
-      // lihiname.appendChild(hiusername);
-      // lihiscore.appendChild(hiuserscore);
+    // var k = keys[i];
+    // console.log(keys);
+    // var username = scores[k].name;
+    // var userscore = scores[k].sc;
+    // var lihiname = document.createElement("li");
+    // var lihiscore = document.createElement("li");
+    // var hiusername = document.createTextNode(username);
+    // var hiuserscore = document.createTextNode(userscore);
+    // console.log(hiusername)
+    // console.log(hiuserscore)
+    // lihiname.appendChild(hiusername);
+    // lihiscore.appendChild(hiuserscore);
 
 
-      // document.getElementById("myUl").appendChild(lihiname);
-      // document.getElementById("myUl").appendChild(lihiscore);
-      // console.log(userscore)
-      // if (userscore > highscore) {
-      //   highscore = userscore;
-      // }
-      // console.log(highscore)
+    // document.getElementById("myUl").appendChild(lihiname);
+    // document.getElementById("myUl").appendChild(lihiscore);
+    // console.log(userscore)
+    // if (userscore > highscore) {
+    //   highscore = userscore;
+    // }
+    // console.log(highscore)
     // }
     hiscoreBox.innerHTML = "High Score:" + highscore;
   }, function (error) {
