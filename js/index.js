@@ -82,7 +82,7 @@ function playGame() {
       score += 1;
       // console.log(score)
       if (score > increasescoreespeed) {
-        speed += 2;
+        speed += 3;
         increasescoreespeed += 10;
 
       }
