@@ -1,6 +1,6 @@
 <h1 align="center">Hey Developers! Presenting you all the 'Snake Game'. </h1>
 
-## [Visit to play](https://gaurav147-star.github.io/Snake-Blast/)
+## [Visit to play](https://snakeblast-gaurav.netlify.app/)
 
 ### Everyone is familiar with this game.We enjoy this game.I have made this game using HTML,CSS,JavaScript and Firebase.
 
